@@ -112,7 +112,7 @@ initial_theta = np.random.rand(X_train.shape[1])
 
 learning_rate = 0.1
 # iterations = 300000
-iterations = 3
+iterations = 300
 learning_rates = [0.001, 0.002, 0.006, 0.01, 0.1]
 
 # Number of iterations
