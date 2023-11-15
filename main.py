@@ -40,23 +40,6 @@ def batch_gradient_descent(X, y, theta, learning_rate, iterations,cost_ret = Fal
             cost_history.append(cost)
     return theta, cost_history
 
-# def gradient_descent(X, y, theta, learning_rate, iterations):
-#     """
-#     Performs gradient descent to learn theta.
-#     Returns the theta and the cost array.
-#     """
-#     m = len(y)
-#     cost_history = []
-
-#     for i in range(iterations):
-#         h = hypothesis(X, theta)
-#         gradient = np.dot(X.T, (h - y)) / m
-#         theta -= learning_rate * gradient
-#         cost = cost_function(X, y, theta)
-#         cost_history.append(cost)
-
-#     return theta, cost_history
-
 
 def stochastic_gradient_descent(X, y, theta, learning_rate, iterations):
     m = len(y)
