@@ -97,12 +97,12 @@ def accuracy(X, y, theta):
 train_data = genfromtxt('./project3_train.csv', delimiter=',')
 test_data = np.loadtxt('./project3_test.csv', delimiter=',')
 # print(train_data)
-X_train = train_data[:,:-1] # Added a bias term (1) in each example
+X_train = train_data[:,:-1]
 # Add a column of ones to X to account for the bias term
 X_train = np.hstack((np.ones((X_train.shape[0], 1)), X_train))
 y_train = train_data[:,-1] # Binary target values
 
-X_test = test_data[:,:-1] # Added a bias term (1) in each example
+X_test = test_data[:,:-1]
 # Add a column of ones to X to account for the bias term
 X_test = np.hstack((np.ones((X_test.shape[0], 1)), X_test))
 y_test = test_data[:,-1] # Binary target value
@@ -110,22 +110,16 @@ y_test = test_data[:,-1] # Binary target value
 # Initial theta
 initial_theta = np.random.rand(X_train.shape[1])
 
-learning_rate = 0.1
-# iterations = 300000
-iterations = 300
+
+#Generating Results for task Q1
 learning_rates = [0.001, 0.002, 0.006, 0.01, 0.1]
-
-# Number of iterations
+# Number of iterations for Q1
 iterations_a = 5000
-
-# Training and plotting
-#Results for task Q1
 plt.figure(figsize=(12, 8))
 
 for lr in learning_rates:
-    theta, cost_history = batch_gradient_descent(X_train, y_train, initial_theta, lr, iterations,cost_ret=True)
-    plt.plot(range(iterations), cost_history, label=f'LR={lr}')
-
+    theta, cost_history = batch_gradient_descent(X_train, y_train, initial_theta, lr, iterations_a,cost_ret=True)
+    plt.plot(range(iterations_a), cost_history, label=f'LR={lr}')
 plt.xlabel('Iterations')
 plt.ylabel('Cost')
 plt.title('Cost vs. Number of Iterations')
@@ -136,6 +130,8 @@ plt.savefig('logistic_regression_costs.png')
 
 
 #Solving Q2
+learning_rate = 0.1
+iterations = 300000
 # Stochastic Gradient Descent
 start_time = time.time()
 theta_sgd = stochastic_gradient_descent(X_train, y_train, initial_theta, learning_rate, iterations)
