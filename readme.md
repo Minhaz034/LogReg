@@ -20,6 +20,13 @@ in both the training and test dataset for 300,000 iterations and Lr = 0.1
 Running the main.py file will automatically generate a table-like structure
 in the terminal showing the accuracy scores for this 3 different gradient descent
 methods for both of the datasets.
+### Comparison :
+
+| Method        | Time (sec) | Training Acc (%) | Test Acc (%) |
+|---------------|------------|------------------|--------------|
+| Stochastic GD | 2188.20    | 100.00           | 100.00       |
+| Mini-Batch GD | 520.45     | 100.00           | 100.00       |
+| Batch GD      | 5.34       | 100.00           | 100.00       |
 
 Note: As we are running 300,000 iterations the code completion is supposed to
 take some minutes.
