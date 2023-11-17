@@ -32,3 +32,6 @@ Packages:
  - numpy==1.26.1
  - matplotlib==3.8.1
 
+## Other files in this project:
+ - `HonorCode.png`
+ - `ProjectReport.pdf`
